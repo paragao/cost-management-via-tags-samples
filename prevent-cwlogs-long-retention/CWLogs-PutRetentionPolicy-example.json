@@ -1,0 +1,56 @@
+{
+    "version":"0",
+    "id":"541ba338-cf33-dfe4-86b5-5f87e6267906",
+    "detail-type":"AWS API Call via CloudTrail",
+    "source":"aws.logs",
+    "account":"441224055073",
+    "time":"2021-02-25T22:54:14Z",
+    "region":"us-east-1",
+    "resources":[
+       
+    ],
+    "detail":{
+       "eventVersion":"1.08",
+       "userIdentity":{
+          "type":"AssumedRole",
+          "principalId":"AROAWNOYAZEQ5ZOB4L2WI:paragao-Isengard",
+          "arn":"arn:aws:sts::441224055073:assumed-role/admin/paragao-Isengard",
+          "accountId":"441224055073",
+          "accessKeyId":"ASIAWNOYAZEQZ5I7567X",
+          "sessionContext":{
+             "sessionIssuer":{
+                "type":"Role",
+                "principalId":"AROAWNOYAZEQ5ZOB4L2WI",
+                "arn":"arn:aws:iam::441224055073:role/admin",
+                "accountId":"441224055073",
+                "userName":"admin"
+             },
+             "webIdFederationData":{
+                
+             },
+             "attributes":{
+                "mfaAuthenticated":"false",
+                "creationDate":"2021-02-25T21:59:15Z"
+             }
+          }
+       },
+       "eventTime":"2021-02-25T22:54:14Z",
+       "eventSource":"logs.amazonaws.com",
+       "eventName":"PutRetentionPolicy",
+       "awsRegion":"us-east-1",
+       "sourceIPAddress":"191.254.33.93",
+       "userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:78.0) Gecko/20100101 Firefox/78.0",
+       "requestParameters":{
+          "retentionInDays":14,
+          "logGroupName":"AAA-teste-rchlo"
+       },
+       "responseElements":"None",
+       "requestID":"cccd7f15-9904-43e9-bdc9-91427b35a02a",
+       "eventID":"0f6e7d5e-88eb-453a-a53d-edbf4bd6f2e0",
+       "readOnly":false,
+       "eventType":"AwsApiCall",
+       "apiVersion":"20140328",
+       "managementEvent":true,
+       "eventCategory":"Management"
+    }
+ }

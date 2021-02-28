@@ -1,0 +1,60 @@
+{
+    "version": "0",
+    "id": "70f5bf63-76d1-bb34-5aa8-328c2fae2e0d",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.s3",
+    "account": "441224055073",
+    "time": "2021-02-11T21:56:10Z",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.08",
+        "userIdentity": {
+            "type": "AssumedRole",
+            "principalId": "AROAWNOYAZEQ5ZOB4L2WI:paragao-Isengard",
+            "arn": "arn:aws:sts::441224055073:assumed-role/admin/paragao-Isengard",
+            "accountId": "441224055073",
+            "accessKeyId": "ASIAWNOYAZEQ2XOA5DO7",
+            "sessionContext": {
+                "sessionIssuer": {
+                    "type": "Role",
+                    "principalId": "AROAWNOYAZEQ5ZOB4L2WI",
+                    "arn": "arn:aws:iam::441224055073:role/admin",
+                    "accountId": "441224055073",
+                    "userName": "admin"
+                },
+                "webIdFederationData": {},
+                "attributes": {
+                    "mfaAuthenticated": "false",
+                    "creationDate": "2021-02-11T17:03:12Z"
+                }
+            }
+        },
+        "eventTime": "2021-02-11T21:56:10Z",
+        "eventSource": "s3.amazonaws.com",
+        "eventName": "CreateBucket",
+        "awsRegion": "us-east-1",
+        "sourceIPAddress": "72.21.198.67",
+        "userAgent": "[S3Console/0.4, aws-internal/3 aws-sdk-java/1.11.920 Linux/4.9.230-0.1.ac.223.84.332.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.275-b01 java/1.8.0_275 vendor/Oracle_Corporation]",
+        "requestParameters": {
+            "bucketName": "aaa-rchlo",
+            "Host": "s3.amazonaws.com"
+        },
+        "responseElements": None,
+        "additionalEventData": {
+            "SignatureVersion": "SigV4",
+            "CipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+            "bytesTransferredIn": 0,
+            "AuthenticationMethod": "AuthHeader",
+            "x-amz-id-2": "Y9sdmyU++mHHf+gnYH+yIxs1NNNwsYu0DNideV7RSN8mPLAvZ087zH9rWeTjLvvSGsYJ9xl5ew8=",
+            "bytesTransferredOut": 0
+        },
+        "requestID": "AE904537EC2E35CD",
+        "eventID": "e5520c48-d3fd-48f6-9769-45672af8fbd1",
+        "readOnly": False,
+        "eventType": "AwsApiCall",
+        "managementEvent": True,
+        "eventCategory": "Management",
+        "vpcEndpointId": "vpce-f40dc59d"
+    }
+}

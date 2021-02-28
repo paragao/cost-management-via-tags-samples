@@ -1,0 +1,42 @@
+{
+    "eventVersion": "1.08",
+    "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAWNOYAZEQ5ZOB4L2WI:paragao-Isengard",
+        "arn": "arn:aws:sts::441224055073:assumed-role/admin/paragao-Isengard",
+        "accountId": "441224055073",
+        "accessKeyId": "ASIAWNOYAZEQZ5I7567X",
+        "sessionContext": {
+            "sessionIssuer": {
+                "type": "Role",
+                "principalId": "AROAWNOYAZEQ5ZOB4L2WI",
+                "arn": "arn:aws:iam::441224055073:role/admin",
+                "accountId": "441224055073",
+                "userName": "admin"
+            },
+            "webIdFederationData": {},
+            "attributes": {
+                "mfaAuthenticated": "false",
+                "creationDate": "2021-02-25T21:59:15Z"
+            }
+        }
+    },
+    "eventTime": "2021-02-25T22:16:41Z",
+    "eventSource": "logs.amazonaws.com",
+    "eventName": "CreateLogGroup",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "191.254.33.93",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:78.0) Gecko/20100101 Firefox/78.0",
+    "requestParameters": {
+        "logGroupName": "AAA-teste-rchlo"
+    },
+    "responseElements": null,
+    "requestID": "a6882436-3470-475b-b9df-7237b54bde86",
+    "eventID": "dcacc05a-2b5c-426b-aa37-85f38e259258",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "apiVersion": "20140328",
+    "managementEvent": true,
+    "eventCategory": "Management",
+    "recipientAccountId": "441224055073"
+}
