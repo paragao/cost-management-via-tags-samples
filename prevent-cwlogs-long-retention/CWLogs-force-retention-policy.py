@@ -51,8 +51,12 @@ def lambda_handler(event, context):
         response = logs.describe_log_groups(
                         logGroupNamePrefix=logGroup
                     )
-                    
-        retention = response['logGroups']['retentionInDays'] if response['logGroups']['retentionInDays'] else False
+        print(response)
+        
+        for log in response['logGroups']:
+            print('logGroups:{}'.format(log))
+            retention = log['retentionInDays'] if log['retentionInDays'] else False
+            print('retention: {}'.format(retention))
         
         if (not retention) or (retention != days):
             print('Retenção fora do padrão! Resetando para tempo pré-definido de {} dias.'.format(days))
@@ -60,4 +64,6 @@ def lambda_handler(event, context):
                                 logGroupName=logGroup,
                                 retentionInDays=days
                             )
+        else: 
+            print('Nenhuma condição atendida. Nada a fazer')
 
