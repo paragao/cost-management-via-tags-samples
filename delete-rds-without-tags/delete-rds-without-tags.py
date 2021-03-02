@@ -10,9 +10,13 @@ def lambda_handler(event, context):
         A console AWS não permite colocar tags no RDS quando a instância é criada, só é possível colocar depois.
         Dessa forma, se você criar um RDS pela console AWS esse script será irá deletar o banco porque ele não vai achar as tags necessárias.
         Se você criar o banco pela CLI ou por uma chamada de SDK (ex: boto3, nodejs, java, etc) então o script irá funcionar porque as tags são definidas na mesma hora da criação.
+        
+        PARA FUNCIONAR PELA CONSOLE
+        é necessário aumentar o tempo de sleep para que o script dê tempo para o usuário criar tags depois de criar o database.
+        recomendado colocar pelo menos 2 minutos ou mais. Auemnta o custo de Lambda, porém não muito, e ainda é muito inferior ao custo de ter um RDS que não deveria estar rodadndo no ar.
     '''
     
-    time.sleep(1)
+    time.sleep(120) #se quiser que funcione pela console, aumente o tempo de sleep
     print('evento: {}'.format(event))
     '''
         pega as informações que vem do evento do Amazon CloudWatch Events
@@ -22,8 +26,8 @@ def lambda_handler(event, context):
     dbInstanceArn = event['detail']['responseElements']['dBInstanceArn']
     userName = event['detail']['userIdentity']['sessionContext']['sessionIssuer']['userName']
     
-    ''' 
-        Tags 
+    '''
+        Tags
     '''
     costcenter = False
     projeto = False
@@ -39,15 +43,15 @@ def lambda_handler(event, context):
             valida se o RDS tem as tags específicas e seta o nome da tag como uma variável booleana
         '''
     
-        for tag in response['TagList']: 
+        for tag in response['TagList']:
             if tag['Key'] == 'costcenter':
                 costcenter = True
             if tag['Key'] == 'projeto':
                 projeto = True
         
-        if costcenter and projeto: 
+        if costcenter and projeto:
             print('RDS criado com as tags certas!')
-            return { 
+            return {
                 'statusCode': 200,
                 'body': json.dumps('Tags estão definidas!')
             }
@@ -62,7 +66,7 @@ def lambda_handler(event, context):
             return {
                 'statusCode': 200,
                 'body': json.dumps('RDS deletado porque não tinha as tags necessárias!')
-            }        
+            }
     except:
         '''
             se não há tags, deleta o RDS
